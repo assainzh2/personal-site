@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Assainzh — Personal Page</title>
+    <meta name="description" content="Personal page for Assainzh, CS student at TUM." />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to main content</a>
+
+    <header class="header">
+      <h1>Hi, I'm Assainzh</h1>
+      <p>Third-year CS student at TUM. Learning web development step by step.</p>
+      <nav aria-label="Main">
+        <a href="#" aria-current="page">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="intro">
+        <h2>About me</h2>
+        <p>I love playing football. It's a great way to stay active and have fun. To be honest, I wanna learn
+          developing big ass projects, and find job to get paid a lot. Money money!!!
+        </p>
+      </section>
+
+      <section id="projects" class="projects">
+        <h2>Projects</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>Profile Page</h3>
+            <p>This page, built with plain HTML and CSS. No frameworks.</p>
+          </article>
+          <article class="card">
+            <h3>Tasks App (coming)</h3>
+            <p>A simple to‑do app with add/edit/delete and good error handling.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer id="contact" class="footer">
+      <h2>Contact</h2>
+      <ul>
+        <li><a href="mailto:you@example.com">Email</a></li>
+        <li><a href="https://github.com/assainzh2">GitHub</a></li>
+      </ul>
+      <p>© <span id="year"></span> Assainzh</p>
+      <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+      </script>
+    </footer>
+  </body>
+</html>
