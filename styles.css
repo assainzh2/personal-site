@@ -11,7 +11,13 @@ body {
 /* Easy-to-see focus for keyboard users */
 :focus-visible {
   outline: 3px solid #2563eb; /* blue */
-  outline-offset: 2px;
+  outline-offset: 2px; 
+}
+
+.card:hover, .nav:hover {
+  cursor: pointer;
+  outline: 2px solid 	#000000; /* outline itself */
+  outline-offset: 2px; /* empty space between that line and the element */
 }
 
 /* Skip link for accessibility */
@@ -21,7 +27,7 @@ body {
 .skip:focus {
   left: 1rem; top: 1rem;
   background: #2563eb; color: #fff;
-  padding: 0.5rem 0.75rem; border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem; border-radius: 0.5rem; 
 }
 
 /* Header and nav */
@@ -48,11 +54,15 @@ body {
   display: grid; gap: 1rem;
   grid-template-columns: 1fr;            /* 1 column on small screens */
 }
-@media (min-width: 640px) {              /* 2 columns on medium screens */
+/* Depending on the width of the screen of device it will adjust to how many columns can be */
+@media (min-width: 640px) {              /* 2 columns on medium screens */ 
   .grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (min-width: 1024px) {             /* 3 columns on large screens */
   .grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (min-width: 1280px) {             /* 4 columns on extra large screens */
+  .grid { grid-template-columns: repeat(4, 1fr); }
 }
 .card {
   border: 1px solid #e5e7eb; border-radius: 0.75rem;
