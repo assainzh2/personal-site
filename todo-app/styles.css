@@ -1,10 +1,23 @@
+* {
+    box_sizing: border-box;
+} /* keeps padding from breaking layout */
+
+
 body {
     display: flex;
+    flex-direction: column; /* Stack Title on top of Todo App */
+    align-items: center;
     justify-content: center;
     min-height: 100vh;
-    margin: 0;
     font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     background-color: #f3f4f6; /* grayer white so that the todo-app can stand out */
+    padding: 20px; /* some breathing room around the edges */
+}
+
+h1 {
+    color: #1f2937;
+    margin-bottom: 2rem; /* Space between Title and Card */
+    text-align: center;
 }
 
 /* The done line marking */
@@ -18,8 +31,7 @@ body {
 .todo-app{
     background-color: white;
     width: 100%;
-    max-width: 20rem;
-    margin-top: 5rem;
+    max-width: 500px;
     padding: 2rem; /* spacing inside the box */
     border-radius: 1.5rem;  /* rounded corners */
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); /* the floating effect */
@@ -28,8 +40,9 @@ body {
 #todo-input {
     width: 90%;
     padding: 1rem;
+    margin-bottom: 20px; /* space below input */
     border: 1px solid #d1d5db; /* Gray-300 */
-    border-radius: 0.5rem;
+    border-radius: 8px;
     font-size: 1rem; /* readable text size */
     margin-bottom: 2rem; /* Push the list away from the input */
     outline: none; /* Remove default blue glow */
