@@ -15,7 +15,7 @@
       <p>Third-year CS student at TUM. Learning web development step by step.</p>
       <nav aria-label="Main">
         <a href="#" aria-current="page" class="nav">Home</a>
-        <a href="#projects" class="nav">Projects</a>
+        <a href="#projects" aria-current="projects" class="nav">Projects</a>
         <a href="#contact" class="nav">Contact</a>
       </nav>
     </header>
@@ -26,9 +26,10 @@
         <p>I love playing football. It's a great way to stay active and have fun. To be honest, I wanna learn
           developing big ass projects, and find job to get paid a lot. Money money!!!
         </p>
-        <img src="my_photo.jpg" alt="my photo" width="240" height="240">
+        <img src="my_photo.jpg" alt="my first photo" width="240" height="320">
+        <img src="my_photo2.jpeg" alt="my second photo" width="240" height="320">
+        <img src="profilbild.jpeg" alt="my third photo" width="240" height="320">
       </section>
-
       <section id="projects" class="projects">
         <h2>Projects</h2>
         <div class="grid">
@@ -63,5 +64,38 @@
         document.getElementById('year').textContent = new Date().getFullYear();
       </script>
     </footer>
+    <div id="overlay"></div>
+    <script>
+          const overlay = document.getElementById('overlay')
+          const images = document.querySelectorAll('img')
+
+          images.forEach(image => {
+            image.addEventListener('click', () => {
+              overlay.classList.add('active');
+              image.classList.add('zoom');
+            });
+          });
+          
+          function closeZoom() {
+            overlay.classList.remove('active');
+
+            const currentlyZoomedImg = document.querySelector('img.zoom')
+            if (currentlyZoomedImg) {
+            currentlyZoomedImg.classList.remove('zoom');
+            }
+          }
+          
+          document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+              if (overlay.classList.contains('active')) /* Only close if overlay is active. 
+              So that if I implement smth in future with escape it won affect it */
+                closeZoom();
+            }
+          });
+
+          overlay.addEventListener('click', () => {
+            closeZoom();
+          });
+        </script>
   </body>
 </html>

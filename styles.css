@@ -14,7 +14,41 @@ body {
   outline-offset: 2px; 
 }
 
-.card:hover, .nav:hover {
+#overlay{
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999; /* Just below the zoomed image */
+  background: rgba(0,0,0,0.8);
+
+  /* State: Hidden by default */
+  opacity: 0;
+  pointer-events: none; /* Let clicks pass through it when hidden */
+  transition: opacity 0.3s; /* Smooth fade in/out */
+}
+
+#overlay.active{
+  opacity: 1;
+  pointer-events: all; /* Capture clicks when active */
+}
+
+img.zoom{
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%); /* Keeps it perfectly centered */
+  z-index: 1000; /* Puts it on top of everything */
+  
+  /* Constraints so it fits the screen */
+  max-width: 90vw; /* 90% of viewport width */
+  max-height: 90vh; /* 90% of viewport height */
+  width: auto;
+  height: auto;
+  
+  cursor: zoom-out;
+}
+
+.card:hover, .nav:hover, img:hover {
   cursor: pointer;
   outline: 2px solid 	#000000; /* outline itself */
   outline-offset: 2px; /* empty space between that line and the element */
