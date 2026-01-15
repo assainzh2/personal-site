@@ -1,5 +1,98 @@
+body {
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    background-color: #f3f4f6; /* grayer white so that the todo-app can stand out */
+}
+
+/* The done line marking */
 .done{
     text-decoration: line-through;
     opacity: 0.5;
     color: #6b7280; /* Gray-500 */
+}
+
+/* The main todo app container */
+.todo-app{
+    background-color: white;
+    width: 100%;
+    max-width: 20rem;
+    margin-top: 5rem;
+    padding: 2rem; /* spacing inside the box */
+    border-radius: 1.5rem;  /* rounded corners */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); /* the floating effect */
+}
+
+#todo-input {
+    width: 90%;
+    padding: 1rem;
+    border: 1px solid #d1d5db; /* Gray-300 */
+    border-radius: 0.5rem;
+    font-size: 1rem; /* readable text size */
+    margin-bottom: 2rem; /* Push the list away from the input */
+    outline: none; /* Remove default blue glow */
+}
+
+/* A subtle glow when u click the input box */
+#todo-input:focus {
+    border-color: #2563eb; /* Blue-600 */
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3); /* Blue glow */
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    transition: all 0.2s; /* Smooth hover animations */
+}
+
+/* Edit Button - Maybe a soft yellow or standard gray? */
+button:first-of-type {
+    background-color: lightblue; /* Yellow-100 */
+    color: #374151;
+}
+
+/* Delete Button - Dangerous red */
+button:last-of-type {
+    background-color: #f8c7c7; /* Very light red */
+    color: #ef4444;            /* Red text */
+    margin-left: 5px;
+}
+
+button:hover {
+    opacity: 0.6; /* Slightly fade on hover */
+}
+
+#todo-list li{
+    background-color: white;
+    border-bottom: 1px solid #f3f4f6; /* subtle divider line */
+    padding: 0.75rem 0; /* space above and below each task */
+    display: flex; /* Prepare the flexible layout */
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+#todo-list li:last-child {
+    border-bottom: none;
+}
+
+.todo-text {
+    flex: 1; /* "Grow to fill the empty space!" */
+    word-break: break-word; /* "If a single word is too long, break it!" */
+    padding: 5px;
+    border: 1px solid transparent; /* Reserve space for border */
+    border-radius: 4px;
+    display: inline-block;
+}
+
+/* When in Edit Mode */
+.todo-text.editing {
+    border: 1px solid #ccc;
+    background: white;
+    outline: none;
+    min-width: 6rem; /* logic for "at least this wide" */
 }
