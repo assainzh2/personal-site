@@ -1,0 +1,5 @@
+.done{
+    text-decoration: line-through;
+    opacity: 0.5;
+    color: #6b7280; /* Gray-500 */
+}
