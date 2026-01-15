@@ -78,6 +78,7 @@ button:last-of-type {
 
 button:hover {
     opacity: 0.6; /* Slightly fade on hover */
+    transition: all 0.2s;
 }
 
 #todo-list li{
@@ -108,4 +109,33 @@ button:hover {
     background: white;
     outline: none;
     min-width: 6rem; /* logic for "at least this wide" */
+}
+/* Footer & Back Button */
+footer {
+    margin-top: 2rem;
+    text-align: center;
+    padding-bottom: 2rem;
+}
+
+#back-to-home {
+    display: inline-flex; /* Keeps the arrow (←) and text aligned perfectly. */
+    align-items: center;
+    gap: 8px;
+    color: #4b5563; /* Gray text */
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 1px solid #e5e7eb;
+    border-radius: 9999px; /* perfect Pill shape */
+    background-color: white;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+#back-to-home:hover {
+    background-color: #f3f4f6;
+    color: #111827; /* Darker text */
+    border-color: #d1d5db;
+    transform: translateY(-2px); /* Slight lift */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
